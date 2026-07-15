@@ -172,26 +172,26 @@ OCR 返回的不只是整段文字，而是一组结构化字段：
 
 ## 官方文档 / API 参考
 
-1. [百度智能云：智能财务票据识别](https://cloud.baidu.com/doc/OCR/s/7ktb8md0j)  
+1. [百度智能云：智能财务票据识别](https://cloud.baidu.com/doc/OCR/s/7ktb8md0j)
    适合第一次写票据识别 PRD 的 PM。重点看支持票种、输入限制、结构化返回字段、字段置信度与验真参数，用它练习把“支持发票识别”改写成可验收的接口需求。
 
-2. [腾讯云：增值税发票识别 API](https://cloud.tencent.com/document/api/866/36210)  
+2. [腾讯云：增值税发票识别 API](https://cloud.tencent.com/document/api/866/36210)
    适合准备参加技术方案评审的 PM。重点看图片/PDF 参数、文件大小与像素限制、错误码和返回结构，理解接入一个模型服务还需要哪些前置校验和失败处理。
 
-3. [国家税务总局全国增值税发票查验平台](https://inv-veri.chinatax.gov.cn/)  
+3. [国家税务总局全国增值税发票查验平台](https://inv-veri.chinatax.gov.cn/)
    适合负责“验真”需求边界的 PM。它能帮助你区分“票面识别”与“权威查验”；产品接入前仍需让法务、财务和工程确认适用渠道、调用方式、频率限制与授权条件，不能把网页查验能力直接等同于开放 API。
 
 ## 行业最佳实践
 
-4. [亚马逊云科技：欧税通基于 Claude 3 实现发票精准识别](https://aws.amazon.com/cn/blogs/china/evatmaster-achieves-accurate-invoice-recognition-based-on-claude3/)  
+4. [亚马逊云科技：欧税通基于 Claude 3 实现发票精准识别](https://aws.amazon.com/cn/blogs/china/evatmaster-achieves-accurate-invoice-recognition-based-on-claude3/)
    适合评估传统 OCR 与多模态模型方案的 PM。案例把图像预处理、提示词、人工快速审核和少量纠错串成完整流程，能帮助你判断“大模型识别率提升”如何转成实际运营效率。
 
 ## 适合 PM 的延伸阅读
 
-5. [PaddleOCR 官方文档](https://www.paddleocr.ai/latest/index.html)  
+5. [PaddleOCR 官方文档](https://www.paddleocr.ai/latest/index.html)
    适合想与算法、工程说清楚处理链路但不打算研究公式的 PM。先看快速开始和文档图像预处理、版面分析、关键信息抽取相关章节，建立“OCR 不只是识字”的模块化认知。
 
 ## 30 分钟动手小练习
 
-6. **画一张“报销票据状态机”**  
+6. **画一张“报销票据状态机”**
    找一张已脱敏的发票样例，用表格写出 8 个关键字段及格式；再画出“待上传 → 识别中 → 待验真 → 自动通过 / 待复核 / 退回补件 → 已回写”的状态流。为每次状态转换补上触发条件、失败去向和责任人。完成后自问：验真超时会去哪、人工改金额后是否重新跑规则、重复请求会不会生成两笔记录？这三个问题能快速检验你的方案是不是一个可运行的工作流。
